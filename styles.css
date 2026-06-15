@@ -143,6 +143,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .g-cell:hover img { filter:saturate(1) contrast(1); transform:scale(1.03); }
 .g-cell::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(8,8,8,.65) 100%); pointer-events:none; }
 
+/* Set en vivo (YouTube embed) */
+.set-en-vivo { margin-top:32px; }
+.set-title { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:.04em; margin-top:6px; color:var(--white); }
+.video-wrapper { position:relative; width:100%; padding-top:56.25%; margin-top:12px; max-width:100%; }
+.video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
 /* ═══════ P7 SERVICES ═══════ */
 #services { background: var(--panel); padding: 120px 72px; position:relative; overflow:hidden; }
 .services-glow { position:absolute; top:-80px; right:-120px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(192,18,42,.09) 0%, transparent 70%); pointer-events:none; }
