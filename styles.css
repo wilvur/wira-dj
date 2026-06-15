@@ -146,7 +146,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 /* ═══════ P7 SERVICES ═══════ */
 #services { background: var(--panel); padding: 120px 72px; position:relative; overflow:hidden; }
 .services-glow { position:absolute; top:-80px; right:-120px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(192,18,42,.09) 0%, transparent 70%); pointer-events:none; }
-.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:56px; }
+.services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:56px; }
 .service-card { background:var(--void); padding:36px 28px; border-top:3px solid var(--red-b); transition:transform .2s; }
 .service-card:hover { transform:translateY(-4px); }
 .service-card:nth-child(2) { border-top-color: #e0b040; }
