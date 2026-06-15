@@ -5,220 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wira DJ — Press Kit</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --black:   #080808;
-    --void:    #0e0e0e;
-    --panel:   #141414;
-    --red:     #c0122a;
-    --red-b:   #e51535;
-    --red-d:   #7a0014;
-    --gold:    #c8a04a;
-    --white:   #f2f0f5;
-    --grey:    #7a7878;
-    --grey-l:  #b8b4b4;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 15px;
-    line-height: 1.65;
-    overflow-x: hidden;
-  }
-  .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; line-height: 0.92; text-transform: uppercase; }
-  .eyebrow { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red-b); }
-  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px,6vw,76px); letter-spacing: 0.04em; line-height: 0.95; text-transform: uppercase; }
-  .tag { display: inline-block; padding: 4px 12px; border: 1px solid var(--red); border-radius: 2px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red-b); font-family: 'Inter', sans-serif; font-weight: 600; }
-  .rule { width: 100%; height: 1px; background: linear-gradient(90deg, var(--red-d) 0%, transparent 100%); margin: 44px 0; }
-
-  /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 62px; background: rgba(8,8,8,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(192,18,42,0.2); }
-  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.14em; background: linear-gradient(120deg, #fff 40%, var(--red-b) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-l); text-decoration: none; transition: color .2s; }
-  .nav-links a:hover { color: var(--red-b); }
-
-  /* BUTTONS */
-  .btn-primary { display: inline-block; padding: 14px 34px; background: var(--red-b); color: #fff; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: background .2s, transform .15s; }
-  .btn-primary:hover { background: #ff1a3c; transform: translateY(-1px); }
-  .btn-ghost { display: inline-block; padding: 13px 28px; border: 1px solid rgba(192,18,42,0.5); color: var(--grey-l); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: border-color .2s, color .2s; }
-  .btn-ghost:hover { border-color: var(--red-b); color: #fff; }
-
-  /* WAVEFORM */
-  .waveform { display: flex; align-items: flex-end; gap: 4px; height: 44px; }
-  .waveform span { width: 3px; background: var(--red-b); border-radius: 2px; animation: wave 1.3s ease-in-out infinite alternate; }
-  .waveform span:nth-child(2n) { animation-delay: .25s; }
-  .waveform span:nth-child(3n) { animation-delay: .5s; }
-  .waveform span:nth-child(5n) { animation-delay: .15s; }
-  @keyframes wave { from { height: 5px; opacity:.3; } to { height: 100%; opacity:1; } }
-
-  /* ═══════ P1 COVER ═══════ */
-  #cover { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; padding-top: 62px; }
-  .cover-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 56px 80px 72px; position: relative; z-index: 2; }
-  .cover-left::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background: linear-gradient(180deg, transparent, var(--red-b) 35%, #fff 65%, transparent); }
-  .cover-logo { font-family: 'Bebas Neue', sans-serif; font-size: clamp(80px,10vw,148px); letter-spacing: .04em; line-height: .88; background: linear-gradient(150deg, #fff 0%, #d4cfcf 60%, var(--red-b) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
-  .cover-dj { font-family: 'Bebas Neue', sans-serif; font-size: clamp(80px,10vw,148px); letter-spacing: .04em; line-height: .88; -webkit-text-stroke: 1.5px var(--red-b); -webkit-text-fill-color: transparent; margin-bottom: 32px; }
-  .cover-slogan { font-size: clamp(14px,1.4vw,18px); font-weight: 300; color: var(--grey-l); letter-spacing: .03em; max-width: 360px; margin-bottom: 40px; border-left: 2px solid var(--red-b); padding-left: 18px; line-height: 1.7; }
-  .cover-genres { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 44px; }
-  .cover-cta { display: flex; align-items: center; gap: 16px; margin-top: 8px; }
-  .cover-waveform { margin-top: 48px; }
-  .cover-right { position: relative; overflow: hidden; }
-  .cover-photo { width:100%; height:100%; object-fit: cover; object-position: top center; transform: rotate(-90deg); }
-  .cover-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, var(--black) 0%, rgba(192,18,42,0.18) 55%, transparent 100%); }
-  .cover-badge { position: absolute; bottom: 36px; right: 36px; background: var(--red-b); padding: 10px 20px; }
-  .cover-badge span { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #fff; }
-
-  /* ═══════ P2 BIO ═══════ */
-  #bio { background: var(--void); padding: 120px 72px; display: grid; grid-template-columns: 1fr 1.45fr; gap: 72px; align-items: start; }
-  .bio-left { position: sticky; top: 90px; }
-  .bio-frame { position: relative; }
-  .bio-frame::before { content:''; position:absolute; top:-3px; left:-3px; right:-3px; bottom:-3px; background: linear-gradient(135deg, var(--red-b), var(--red-d)); z-index:0; }
-  .bio-inner { position:relative; z-index:1; overflow:hidden; line-height:0; }
-  .bio-img { width:100%; display:block; filter: saturate(.8) contrast(1.08); }
-  .bio-img-tint { position:absolute; inset:0; background: linear-gradient(180deg, rgba(192,18,42,.08) 0%, rgba(8,8,8,.55) 100%); }
-  .bio-caption { position:absolute; bottom:24px; left:24px; z-index:2; }
-  .bio-text { color: var(--grey-l); font-size: 14.5px; line-height: 1.85; margin-bottom: 18px; }
-  .bio-text strong { color: var(--white); font-weight: 600; }
-  .bio-quote { background: linear-gradient(90deg, rgba(192,18,42,.12), transparent); border-left: 3px solid var(--red-b); padding: 20px 28px; margin: 28px 0; font-size: 17px; font-style: italic; color: var(--white); font-weight: 300; }
-  .bio-facts { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 28px; }
-  .bio-fact-label { font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--grey); margin-bottom:5px; }
-  .bio-fact-value { font-size:14px; font-weight:600; color:var(--white); }
-
-  /* ═══════ P3 SHOW ═══════ */
-  #show { background: var(--panel); padding: 120px 72px; position: relative; overflow: hidden; }
-  .show-bg { position:absolute; top:30px; right:-30px; font-family:'Bebas Neue',sans-serif; font-size: clamp(120px,18vw,260px); color:rgba(192,18,42,.04); pointer-events:none; white-space:nowrap; user-select:none; }
-  .show-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; margin-top: 60px; }
-  .show-card { background: var(--void); padding: 36px 32px; position:relative; overflow:hidden; transition: background .25s; }
-  .show-card:hover { background: rgba(192,18,42,.07); }
-  .show-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:var(--red-b); transform:scaleY(0); transition:transform .3s; transform-origin:top; }
-  .show-card:hover::before { transform:scaleY(1); }
-  .show-num { font-family:'Bebas Neue',sans-serif; font-size:52px; color:rgba(192,18,42,.18); line-height:1; margin-bottom:14px; }
-  .show-card h3 { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:.06em; margin-bottom:10px; }
-  .show-card p { font-size:13px; color:var(--grey); line-height:1.75; }
-  .show-bottom { margin-top:72px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
-  .genre-row { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
-  .genre-name { font-family:'Inter',sans-serif; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--grey-l); min-width:160px; }
-  .genre-bar { height:3px; background: linear-gradient(90deg, var(--red-b), var(--red-d)); border-radius:2px; }
-
-  /* ═══════ P4 VENUES / FECHAS ═══════ */
-  #venues { background: var(--void); padding: 120px 72px; }
-  .dates-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; margin-top: 60px; }
-  .date-card { background: var(--panel); padding: 32px 30px; display:flex; gap:24px; align-items:flex-start; border-left: 3px solid transparent; transition: border-color .2s, background .2s; }
-  .date-card:hover { border-left-color: var(--red-b); background: rgba(192,18,42,.05); }
-  .date-card.featured { background: linear-gradient(100deg, rgba(192,18,42,.14), transparent); border-left: 3px solid var(--red-b); }
-  .date-num { font-family:'Bebas Neue',sans-serif; font-size:42px; line-height:1; color:var(--red-b); min-width:56px; }
-  .date-info h4 { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:.05em; margin-bottom:4px; }
-  .date-info p { font-size:12.5px; color:var(--grey); line-height:1.6; }
-  .date-flyers { display: grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:56px; }
-  .flyer-item { overflow:hidden; aspect-ratio:9/16; position:relative; }
-  .flyer-item img { width:100%; height:100%; object-fit:cover; transition: transform .4s; filter:saturate(.7); }
-  .flyer-item:hover img { transform:scale(1.04); filter:saturate(1); }
-  .flyer-label { position:absolute; bottom:0; left:0; right:0; padding:20px 16px 16px; background:linear-gradient(0deg, rgba(8,8,8,.9) 0%, transparent 100%); font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:.06em; }
-
-  /* ═══════ P5 SOCIAL / STATS ═══════ */
-  #social { background: var(--black); padding: 120px 72px; }
-  .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin: 56px 0; }
-  .stat-block { background: var(--panel); padding: 40px 32px; position:relative; }
-  .stat-block::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--red-b); }
-  .stat-num { font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,5vw,68px); line-height:1; background:linear-gradient(135deg,#fff,var(--red-b)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:6px; }
-  .stat-placeholder { font-family:'Bebas Neue',sans-serif; font-size:44px; color:rgba(122,120,120,.3); line-height:1; margin-bottom:6px; }
-  .stat-label { font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--grey); }
-  .social-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .social-card { background:var(--panel); border:1px solid rgba(192,18,42,.18); padding:30px; display:flex; flex-direction:column; gap:14px; transition:border-color .25s; }
-  .social-card:hover { border-color:var(--red-b); }
-  .social-platform { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:.06em; }
-  .social-handle { color:var(--red-b); font-family:'Inter',sans-serif; font-size:13px; font-weight:600; }
-  .social-desc { font-size:12.5px; color:var(--grey); line-height:1.7; }
-  .live-dot { display:flex; align-items:center; gap:8px; }
-  .dot { width:7px; height:7px; border-radius:50%; background:var(--red-b); animation:pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.4;transform:scale(.7);} }
-  .live-text { font-size:10px; letter-spacing:.15em; color:var(--red-b); font-weight:700; font-family:'Inter',sans-serif; }
-
-  /* ═══════ P6 GALLERY ═══════ */
-  #gallery { background: var(--void); padding: 120px 72px; }
-  .gallery-grid { display:grid; grid-template-columns:repeat(12,1fr); grid-template-rows:240px 240px 240px; gap:3px; margin-top:56px; }
-  .g-cell { overflow:hidden; position:relative; }
-  .g-cell:nth-child(1) { grid-column:span 7; grid-row:span 2; }
-  .g-cell:nth-child(2) { grid-column:span 5; }
-  .g-cell:nth-child(3) { grid-column:span 5; }
-  .g-cell:nth-child(4) { grid-column:span 4; }
-  .g-cell:nth-child(5) { grid-column:span 4; }
-  .g-cell:nth-child(6) { grid-column:span 4; }
-  .g-cell img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.75) contrast(1.05); transition:filter .4s, transform .4s; }
-  .g-cell:hover img { filter:saturate(1) contrast(1); transform:scale(1.03); }
-  .g-cell::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(8,8,8,.65) 100%); pointer-events:none; }
-
-  /* ═══════ P7 SERVICES ═══════ */
-  #services { background: var(--panel); padding: 120px 72px; position:relative; overflow:hidden; }
-  .services-glow { position:absolute; top:-80px; right:-120px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(192,18,42,.09) 0%, transparent 70%); pointer-events:none; }
-  .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:56px; }
-  .service-card { background:var(--void); padding:36px 28px; border-top:3px solid var(--red-b); transition:transform .2s; }
-  .service-card:hover { transform:translateY(-4px); }
-  .service-card:nth-child(2) { border-top-color: #e0b040; }
-  .service-card:nth-child(3) { border-top-color: #888; }
-  .service-emoji { font-size:30px; margin-bottom:18px; display:block; }
-  .service-card h3 { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:.06em; margin-bottom:12px; }
-  .service-card ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
-  .service-card li { font-size:12.5px; color:var(--grey); padding-left:14px; position:relative; }
-  .service-card li::before { content:'→'; position:absolute; left:0; color:var(--red-b); font-size:11px; }
-  .rider-box { margin-top:56px; background:rgba(192,18,42,.06); border-left:3px solid var(--red-b); padding:28px 36px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; }
-  .rider-box p { font-size:13px; color:var(--grey-l); line-height:1.75; max-width:560px; }
-
-  /* ═══════ P8 SLOGANS ═══════ */
-  #slogans { background: var(--black); padding: 120px 72px; position:relative; overflow:hidden; }
-  .slogans-watermark { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:'Bebas Neue',sans-serif; font-size:280px; color:rgba(192,18,42,.03); white-space:nowrap; pointer-events:none; user-select:none; }
-  .slogan-list { display:flex; flex-direction:column; margin-top:56px; position:relative; z-index:1; }
-  .slogan-row { display:flex; align-items:center; gap:28px; padding:20px 0; border-bottom:1px solid rgba(255,255,255,.04); transition:padding-left .25s; cursor:default; }
-  .slogan-row:hover { padding-left:14px; }
-  .slogan-n { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--red-b); min-width:28px; opacity:.7; }
-  .slogan-t { font-family:'Bebas Neue',sans-serif; font-size:clamp(20px,2.8vw,36px); letter-spacing:.04em; color:var(--white); }
-  .slogan-t em { color:var(--red-b); font-style:normal; }
-
-  /* ═══════ P9 CONTACT ═══════ */
-  #contact { background: var(--void); padding: 120px 72px; }
-  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; margin-top:56px; align-items:start; }
-  .contact-list { display:flex; flex-direction:column; gap:3px; }
-  .contact-item { display:flex; align-items:center; gap:20px; padding:22px 26px; background:var(--panel); border-left:3px solid transparent; text-decoration:none; transition:border-color .2s, background .2s; }
-  .contact-item:hover { border-left-color:var(--red-b); background:rgba(192,18,42,.06); }
-  .contact-icon { width:42px; height:42px; background:rgba(192,18,42,.12); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
-  .contact-type { font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--grey); margin-bottom:3px; }
-  .contact-value { font-size:15px; color:var(--white); font-weight:500; }
-  .contact-arrow { color:var(--grey); font-size:18px; margin-left:auto; transition:color .2s, transform .2s; }
-  .contact-item:hover .contact-arrow { color:var(--red-b); transform:translateX(4px); }
-  .contact-right { display:flex; flex-direction:column; gap:28px; }
-  .contact-big-logo { font-family:'Bebas Neue',sans-serif; font-size:clamp(64px,8vw,104px); letter-spacing:.05em; line-height:.9; background:linear-gradient(140deg,#fff 30%, var(--red-b) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-  .contact-desc { color:var(--grey); font-size:13px; line-height:1.85; max-width:380px; }
-  .contact-quote { border-left:2px solid var(--red-b); padding-left:18px; font-style:italic; color:var(--grey-l); font-size:14px; line-height:1.7; }
-
-  /* FOOTER */
-  footer { background:var(--black); border-top:1px solid rgba(192,18,42,.2); padding:28px 72px; display:flex; align-items:center; justify-content:space-between; }
-  footer p { font-size:11px; color:var(--grey); font-family:'Inter',sans-serif; letter-spacing:.09em; }
-  .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:.14em; color:rgba(192,18,42,.4); }
-
-  /* RESPONSIVE */
-  @media(max-width:900px){
-    #cover{grid-template-columns:1fr;}
-    .cover-right{display:none;}
-    #bio,#show,#venues,#social,#gallery,#services,#slogans,#contact{padding:80px 28px;}
-    #bio{grid-template-columns:1fr;gap:40px;}
-    .bio-left{position:static;}
-    .show-grid,.dates-grid,.services-grid,.social-cards{grid-template-columns:1fr;}
-    .stats-row{grid-template-columns:repeat(2,1fr);}
-    .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
-    .g-cell{grid-column:span 1 !important;grid-row:span 1 !important;height:180px;}
-    .contact-grid{grid-template-columns:1fr;gap:40px;}
-    .date-flyers{grid-template-columns:1fr 1fr;}
-    .cover-left{padding:72px 28px;}
-    nav{padding:0 20px;}
-    .nav-links{display:none;}
-    footer{padding:22px 28px;flex-direction:column;gap:10px;text-align:center;}
-    .show-bottom{grid-template-columns:1fr;}
-    .rider-box{flex-direction:column;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -247,7 +34,7 @@
       <span class="tag">Techengue</span>
       <span class="tag">Aftermix</span>
       <span class="tag">Latin Tech</span>
-      <span class="tag">DSP Guaracha</span>
+      <span class="tag">Guaracha</span>
       <span class="tag">Open Format</span>
     </div>
     <div class="cover-cta">
@@ -286,14 +73,14 @@
     <h2 class="section-title" style="margin-bottom:36px;">Wira<br>DJ</h2>
     <p class="bio-text"><strong>Wira DJ</strong> es uno de los nombres más prometedores de la escena de música electrónica argentina. Con raíces en los ritmos que mueven cuerpos y despiertan emociones, Chris construyó su identidad sonora en los boliches donde el techengue, el aftermix y la guaracha no son géneros alternativos, sino el corazón de la noche.</p>
     <div class="bio-quote">"Cada set es una conversación entre el DJ y la pista. Mi trabajo es escuchar antes de hablar."</div>
-    <p class="bio-text">Con un oído entrenado en los últimos movimientos del underground latino y global, Wira DJ domina la arquitectura de un set: sabe cuándo tensar la energía, cuándo soltar el drop y cómo sostener una noche entera sin perder el hilo. Su propuesta abraza el <strong>techengue más festivo</strong>, el vuelo del <strong>aftermix</strong>, la síntesis del <strong>latin tech</strong> y los bajos de la <strong>DSP guaracha</strong>, construyendo un recorrido sonoro que ninguna pista olvida.</p>
+    <p class="bio-text">Con un oído entrenado en los últimos movimientos latino y global, Wira DJ domina la arquitectura de un set: sabe cuándo tensar la energía, cuándo soltar el drop y cómo sostener una noche entera sin perder el hilo. Su propuesta abraza el <strong>techengue más festivo</strong>, el vuelo del <strong>aftermix</strong>, la síntesis del <strong>latin tech</strong> y los bajos de la <strong>DSP guaracha</strong>, construyendo un recorrido sonoro que ninguna pista olvida.</p>
     <p class="bio-text">Joven, carismático y genuinamente conectado con su público, entiende que un show no termina cuando termina la música. Esa energía de ida y vuelta entre la cabina y el crowd es lo que convierte sus presentaciones en experiencias que se recuerdan. Como <strong>DJ open format</strong>, Wira lee cada espacio y lo transforma.</p>
     <p class="bio-text">En constante evolución, trabaja con la misma intensidad dentro y fuera de la cabina: curando selecciones, explorando nuevos sonidos y consolidando una presencia digital que refleja exactamente quién es: <strong>un artista emergente con visión de headliner</strong>.</p>
     <div class="rule"></div>
     <div class="bio-facts">
       <div><div class="bio-fact-label">País</div><div class="bio-fact-value">Argentina 🇦🇷</div></div>
       <div><div class="bio-fact-label">Género Principal</div><div class="bio-fact-value">Techengue · Aftermix</div></div>
-      <div><div class="bio-fact-label">Secundarios</div><div class="bio-fact-value">Latin Tech · DSP Guaracha</div></div>
+      <div><div class="bio-fact-label">Secundarios</div><div class="bio-fact-value">Latin Tech · Guaracha</div></div>
       <div><div class="bio-fact-label">Formato</div><div class="bio-fact-value">Open Format DJ</div></div>
     </div>
   </div>
@@ -460,7 +247,7 @@
     <div class="g-cell"><img src="images/image-7.jpeg" alt="Wira DJ en cabina"></div>
     <div class="g-cell"><img src="images/image-8.jpeg" alt="Wira DJ — Sign"></div>
     <div class="g-cell"><img src="images/image-9.jpeg" alt="Wira DJ en cabina rojo"></div>
-    <div class="g-cell"><img src="images/image-10.jpeg" alt="Wira DJ set"></div>
+    <div class="g-cell"><img src="images/image-10.jpg" alt="Wira DJ set"></div>
     <div class="g-cell"><img src="images/image-11.jpeg" alt="Wira DJ — Gran Escenario"></div>
   </div>
   <div style="margin-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
