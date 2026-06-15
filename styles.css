@@ -149,6 +149,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .video-wrapper { position:relative; width:100%; padding-top:56.25%; margin-top:12px; max-width:100%; }
 .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
 
+/* Full-bleed (edge-to-edge) video wrapper */
+.video-wrapper.full-bleed { position:relative; width:100vw; max-width:100vw; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; padding-top:56.25%; margin-top:12px; }
+.video-wrapper.full-bleed iframe { width:100vw; height:100%; }
+
 /* ═══════ P7 SERVICES ═══════ */
 #services { background: var(--panel); padding: 120px 72px; position:relative; overflow:hidden; }
 .services-glow { position:absolute; top:-80px; right:-120px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(192,18,42,.09) 0%, transparent 70%); pointer-events:none; }
