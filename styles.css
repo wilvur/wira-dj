@@ -113,8 +113,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 /* ═══════ P5 SOCIAL / STATS ═══════ */
 #social { background: var(--black); padding: 120px 72px; }
 .rider-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 48px 0; }
-.rider-card { background: var(--panel); border: 1px solid rgba(255,255,255,.12); overflow: hidden; display: flex; flex-direction: column; max-height: 360px; }
-.rider-card-photo { position: relative; width: 100%; aspect-ratio: 1 / 1; max-height: 180px; overflow: hidden; }
+.rider-card { background: var(--panel); border: 1px solid rgba(255,255,255,.12); overflow: hidden; display: flex; flex-direction: column; aspect-ratio: 1 / 1; }
+.rider-card-photo { position: relative; width: 100%; height: 100%; overflow: hidden; }
 .rider-card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .rider-card-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; background: linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.65) 100%); }
 .rider-card-top { font-family:'Inter',sans-serif; font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--red-b); }
